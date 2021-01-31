@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SRMC MAP</title>
+	<style>
+		#map {position: absolute; top:0; bottom: 0; left:0; right:0;}
+	</style>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+</head>
+<body>
+	<div id = "map"></div>
+	<script>
+		var map = L.map('map').setView([13.039190,80.142903],16.25);
+
+		L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=EtaPrX1cM3BPteYZjAFL', {
+			attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
+		}).addTo(map);
+
+		var myGeoJSON = {"type":"FeatureCollection","features":[{"type":"Feature","id":"27110e83-cb55-4824-870a-ec3a55e4a1b3","geometry":{"type":"Polygon","coordinates":[[[80.14222585,13.04319262],[80.14321227,13.04310228],[80.14317011,13.04279017],[80.1421837,13.04288873],[80.14222585,13.04319262]]]},"properties":{"name":"","SRET Building":""}},{"type":"Feature","id":"3f603cd2-60eb-46d5-9719-d0b4873ac9a6","geometry":{"type":"LineString","coordinates":[[80.14247612,13.03685901],[80.14260488,13.03766988],[80.14227379,13.03796108],[80.14234276,13.03836428],[80.14252211,13.03850316],[80.14276123,13.0385614]]},"properties":{"name":""}},{"type":"Feature","id":"9490c56e-d8ba-4337-b804-2317ccd49659","geometry":{"type":"LineString","coordinates":[[80.14276123,13.0385614],[80.14322108,13.04175111]]},"properties":{"name":""}},{"type":"Feature","id":"fb4c4410-98c0-4bfc-9ca7-75c15aa06a16","geometry":{"type":"LineString","coordinates":[[80.1431783,13.04145437],[80.1431783,13.04145437],[80.14330845,13.04229317],[80.14290838,13.04233349],[80.14296816,13.0426874]]},"properties":{"name":""}},{"type":"Feature","id":"73f3572e-5861-46c8-95f2-b89604538b7e","geometry":{"type":"LineString","coordinates":[[80.14296816,13.0426874],[80.14296816,13.0426874]]},"properties":{"name":""}}]}
+
+
+		var icon1 = L.icon ({
+			iconUrl: "https://www.pinclipart.com/picdir/big/92-924877_teaching-base-in-colleges-and-universities-comments-gmail.png",
+			iconSize: [30,30]
+		})
+
+		var icon2 = L.icon ({
+			iconUrl: "https://www.pinclipart.com/picdir/big/92-924877_teaching-base-in-colleges-and-universities-comments-gmail.png",
+			iconSize: [25,25]
+		})
+
+		var icon_audi = L.icon ({
+			iconUrl: "https://www.clipartmax.com/png/middle/241-2413171_more-statistics-people-icon-png-circle.png",
+			iconSize: [25,25]
+		})
+
+		var icon_blue = L.icon ({
+			iconUrl: "https://png2.cleanpng.com/sh/2545660dc55150559201a71705185053/L0KzQYm3U8I5N5loj5H0aYP2gLBuTfNwdaF6jNd7LXnmf7B6TfNtcaEyeeR9LXzyc7L7if9vNZpoh9C2NXHlcrW9UfY1QGI1SKs3NUS4RoGAVscyPWM3SqcENEi6Qoq8Ur5xdpg=/kisspng-computer-icons-clip-art-location-icon-5abbd61f481009.5456076715222594872952.png",
+			iconSize: [28,28]
+		})
+
+
+		var srmc_marker = L.marker([13.039190,80.142903],{icon:icon1}).addTo(map);
+		srmc_marker.bindPopup("<b>Welcome to Sri Ramachandra Institute of Higher Education and Research</b>").openPopup();
+
+		var sret_marker = L.marker([13.042606,80.143095],{icon:icon1}).addTo(map);
+		sret_marker.bindPopup("<b>Sri Ramachandra Engineering and Technology </b>").openPopup();
+
+		var audi_marker = L.marker([13.038043, 80.140981],{icon:icon_audi}).addTo(map);
+		audi_marker.bindPopup("<b>SRIHER Auditorium</b>");
+
+		var hosp_marker = L.marker([13.038646, 80.143414],{icon:icon_blue}).addTo(map);
+		hosp_marker.bindPopup("<b>Sri Ramachandra Medical Centre and Hospital</b>");
+
+		var mb_marker = L.marker([13.039036, 80.141989],{icon:icon_blue}).addTo(map);
+		mb_marker.bindPopup("<b>SRMC Main Block</b>");
+
+		var marker1 = L.marker([13.040580, 80.142225],{icon:icon_blue}).addTo(map);
+		marker1.bindPopup("<b>Football Ground</b>");
+
+		var marker2 = L.marker([13.041062, 80.141554],{icon:icon_blue}).addTo(map);
+		marker2.bindPopup("<b>Tennis Court</b>");
+
+		var marker3 = L.marker([13.040386, 80.139973],{icon:icon_blue}).addTo(map);
+		marker3.bindPopup("<b>Cricket Ground</b>");
+
+		var marker4 = L.marker([13.037257, 80.143631],{icon:icon_blue}).addTo(map);
+		marker4.bindPopup("<b>Sri Ramachandra G-Block</b>");
+
+		var marker5 = L.marker([13.037257, 80.143631],{icon:icon_blue}).addTo(map);
+		marker5.bindPopup("<b>Sri Ramachandra Dental College</b>");
+
+		var marker6 = L.marker([13.039301, 80.144134],{icon:icon_blue}).addTo(map);
+		marker6.bindPopup("<b>Sri Ramachandra Pharmacy College</b>");
+
+		var marker7 = L.marker([13.037179, 80.144488],{icon:icon_blue}).addTo(map);
+		marker7.bindPopup("<b>Sri Ramachandra College of Physiotherapy</b>");
+
+
+
+
+L.geoJSON(myGeoJSON).addTo(map);
+
+
+	</script>
+
+</body>
+</html>
